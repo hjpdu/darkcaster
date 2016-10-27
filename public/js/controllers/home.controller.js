@@ -5,6 +5,12 @@
   HomeController.$inject = ['$scope'];
 
   function HomeController($scope){
-    alert();
+    $scope.getWeatherURL = getWeatherURL;
+
+    function getWeatherURL(newLatitude,newLongitude){
+      console.log(newLatitude);
+      console.log(newLongitude);
+
+    }
   }
 }());
