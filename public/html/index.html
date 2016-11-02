@@ -25,15 +25,24 @@
           <button id="get-weather-minutely-button" class="btn btn-success" ng-click='getWeather(latitude,longitude)'>Get Weather Minutely</button>
         </div>
       </div>
-      <div ng-show='weather.minutely'>
+      <div ng-show= 'showMinutely' && 'weather.minutely'>
         <div class="row">
-          <div class="col-md-1 col-md-offset-1">
-            <img class="img-responsive" ng-src="images/{{weather.currently.icon}}.png" alt='weather.currently.icon'>
+          <div class="col-md-6 col-md-offset-1">
+            <img class="img-responsive" ng-src="images/{{ weather.minutely.icon }}.png" alt='weather.minutely.icon'>
+            <p>{{weather.minutely.summary}}</p>
+            <ul>
+              <li>{{minuteLat}} {{minuteLon}}</li>
+              <li ng-repeat = "minute in weather.minutely.data">
+
+                Prob:{{minute.precipProbability | number:0 }}
+                Intensity: {{minute.precipIntensity * 100 | number: 0}}
+                Date: {{minute.time | date:"short"}} </li>
+            </ul>
           </div>
           <div class="col-md-2">
-            <ul>
-              <li ng-repeat = "minute in minutes"> {{weather.minutely.data}}</li>
-            </ul>
+            <!-- <ul>
+              <li ng-repeat = "minute in minutes"> {{ weather.minutely.data }} </li>
+            </ul> -->
           </div>
           <!-- <div class="col-md-3">
             <p>{{weather.currently.temperature | number:0 }}&deg;F </p>

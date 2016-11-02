@@ -9,8 +9,6 @@
         secret: 'its a secret'
       };
 
-      var lat;
-      var lon;
       var service = {};
       service.weatherData = [];
       service.getWeather = getWeather;
@@ -22,8 +20,8 @@
       // };
 
       function getWeather(latitude, longitude){
-        lat = latitude;
-        lon = longitude;
+        service.lat = latitude;
+        service.lon = longitude;
         var config = {
           headers: secretToken
         };
