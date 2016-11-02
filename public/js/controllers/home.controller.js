@@ -7,7 +7,7 @@
   function HomeController($scope, WeatherService){
     $scope.getWeather = getWeather;
     $scope.weather = WeatherService.weatherData;
-    
+
     $scope.$watch(function(){
       return WeatherService.weatherData;
     }, function(newVal, oldVal){

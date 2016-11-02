@@ -6,13 +6,48 @@
 </head>
 <body>
   <div id="container">
+    <div ng-controller='MinutelyController'>
+      <div class="row">
+        <div class="col-md-1 col-md-offset-1">
+          <h1>Minutely</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2 col-md-offset-1">
+          <div class="form-group">
+            <input type="text" id="latitude" class="form-control" placeholder="latitude" ng-model='latitude'>
+            <input type="text" id="longitude" class="form-control" placeholder="longitude" ng-model='longitude'>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2 col-md-offset-1">
+          <button id="get-weather-minutely-button" class="btn btn-success" ng-click='getWeather(latitude,longitude)'>Get Weather Minutely</button>
+        </div>
+      </div>
+      <div ng-show='weather.minutely'>
+        <div class="row">
+          <div class="col-md-1 col-md-offset-1">
+            <img class="img-responsive" ng-src="images/{{weather.currently.icon}}.png" alt='weather.currently.icon'>
+          </div>
+          <div class="col-md-2">
+            <p>{{weather.minutely.summary}}</p>
+            <p>{{weather.minutely.time * 1000 | date:"medium"}}</p>
+          </div>
+          <!-- <div class="col-md-3">
+            <p>{{weather.currently.temperature | number:0 }}&deg;F </p>
+          </div>
+          <div class="col-md-3 col-md-offset-6">
+            <p>{{weather.currently.precipProbability * 100 | number:0}}%</p>
+          </div> -->
+        </div>
+      </div>
+    </div>
+
+    <div ng-controller='HourlyController'></div>
+    <div ng-controller='DailyController'></div>
     <div ng-controller='HomeController'>
       <!--  above is current weather only-->
-
-    <!-- <div ng-controller='MinutelyController'></div>
-    <div ng-controller='HourlyController'></div>
-    <div ng-controller='DailyController'></div> -->
-
       <div class="row">
         <div class="col-md-1 col-md-offset-1">
           <h1>Darkcaster</h1>
@@ -22,43 +57,39 @@
         <div class="col-md-2 col-md-offset-1">
           <div class="form-group">
             <input type="text" id = "latitude" class = 'form-control' placeholder="latitude" ng-model='latitude'>
-            </label>
             <input type="text" id = "longitude" class = 'form-control' placeholder=  'longitude' ng-model='longitude'>
-            </label>
           </div>
         </div>
-    </div>
-    <div class="row">
+      </div>
+      <div class="row">
       <div class="col-md-2 col-md-offset-1">
         <button id="get-weather-button" class="btn btn-success" ng-click='getWeather(latitude, longitude)'>Get Weather</button>
       </div>
-    </div>
-      <div></div>
+      </div>
+    <hr>
   <div ng-show='weather.currently'>
     <div class="row">
-      <div class="col-md-1">
-        <img class="img-responsive" ng-src="images/{{weather.currently.icon}}.png" alt='weather.currently.icon'>
+      <div class="col-md-1 col-md-offset-1">
+        <img class="img-responsive" ng-src="images/{{weather.currently.icon}}.png" alt='weather.currently.icon'></img>
       </div>
       <div class="col-md-2">
         <p>{{weather.currently.summary}}</p>
         <p>{{weather.currently.time * 1000 | date:"medium"}}</p>
       </div>
-    </div>
-    <div class="row">
       <div class="col-md-3">
         <p>{{weather.currently.temperature | number:0 }}&deg;F </p>
       </div>
       <div class="col-md-3 col-md-offset-6">
         <p>{{weather.currently.precipProbability * 100 | number:0}}%</p>
-
-        <!-- <button ng-click='log()'>log</button> -->
       </div>
     </div>
-</div>
+  </div>
+    </div>
+  </div>
+
   <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js'></script>
   <script src='js/app.js'></script>
   <script src='js/controllers/home.controller.js'></script>
   <script src='js/services/weather.service.js'></script>
-
 </body>
 </html>

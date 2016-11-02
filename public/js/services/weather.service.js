@@ -24,10 +24,9 @@
       function getWeather(latitude, longitude){
         lat = latitude;
         lon = longitude;
-        var config ={
+        var config = {
           headers: secretToken
         };
-
         var url = '/forecast/' + latitude + ',' + longitude;
         return $http.get(url, config)
                     .then(function(response){
