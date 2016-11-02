@@ -31,8 +31,9 @@
             <img class="img-responsive" ng-src="images/{{weather.currently.icon}}.png" alt='weather.currently.icon'>
           </div>
           <div class="col-md-2">
-            <p>{{weather.minutely.summary}}</p>
-            <p>{{weather.minutely.time * 1000 | date:"medium"}}</p>
+            <ul>
+              <li ng-repeat = "minute in minutes"> {{weather.minutely.data}}</li>
+            </ul>
           </div>
           <!-- <div class="col-md-3">
             <p>{{weather.currently.temperature | number:0 }}&deg;F </p>
@@ -67,7 +68,7 @@
       </div>
       </div>
     <hr>
-  <div ng-show='weather.currently'>
+  <div ng-show='showCurrently' && 'weather.currently'>
     <div class="row">
       <div class="col-md-1 col-md-offset-1">
         <img class="img-responsive" ng-src="images/{{weather.currently.icon}}.png" alt='weather.currently.icon'></img>

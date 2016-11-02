@@ -14,7 +14,6 @@
       $scope.weather = WeatherService.weatherData;
     });
 
-
     function getWeather(latitude,longitude){
       WeatherService.getWeather(latitude,longitude);
     }

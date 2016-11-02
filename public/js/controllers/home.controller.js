@@ -7,6 +7,7 @@
   function HomeController($scope, WeatherService){
     $scope.getWeather = getWeather;
     $scope.weather = WeatherService.weatherData;
+    $scope.showCurrently = false;
 
     $scope.$watch(function(){
       return WeatherService.weatherData;
@@ -15,7 +16,9 @@
     });
 
     function getWeather(latitude, longitude){
+      $scope.showCurrently = true;
       WeatherService.getWeather(latitude, longitude);
+
     }
     // function log(){
     //   console.log(WeatherService.weatherData);
