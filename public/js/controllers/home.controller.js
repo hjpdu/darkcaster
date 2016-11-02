@@ -5,7 +5,7 @@
   HomeController.$inject = ['$scope', 'WeatherService'];
 
   function HomeController($scope, WeatherService){
-    $scope.showCurrently = false;
+    $scope.showDaily = false;
     $scope.getWeather = getWeather;
     $scope.weather = WeatherService.weatherData;
 
