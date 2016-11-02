@@ -15,8 +15,8 @@
       <div class="row">
         <div class="col-md-2 col-md-offset-1">
           <div class="form-group">
-            <input type="text" id="latitude" class="form-control" placeholder="latitude" ng-model='latitude'>
-            <input type="text" id="longitude" class="form-control" placeholder="longitude" ng-model='longitude'>
+            <input type="text" id="latitude" class="form-control" placeholder= "latitude" ng-model='latitude'>
+            <input type="text" id="longitude" class="form-control" placeholder= "longitude" ng-model='longitude'>
           </div>
         </div>
       </div>
@@ -44,8 +44,8 @@
       </div>
     </div>
 
-    <div ng-controller='HourlyController'></div>
-    <div ng-controller='DailyController'></div>
+    <!-- <div ng-controller='HourlyController'></div>
+    <div ng-controller='DailyController'></div> -->
     <div ng-controller='HomeController'>
       <!--  above is current weather only-->
       <div class="row">
@@ -90,6 +90,7 @@
   <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js'></script>
   <script src='js/app.js'></script>
   <script src='js/controllers/home.controller.js'></script>
+  <script src='js/controllers/minutely.controller.js'></script>
   <script src='js/services/weather.service.js'></script>
 </body>
 </html>
