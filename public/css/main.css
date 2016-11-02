@@ -1,3 +1,18 @@
+body{
+
+}
+
 p {
   font-size: 20px;
+}
+
+hr {
+  margin:5px;
+}
+
+#container button{
+  font-size: 20px;
+  border-style: none;
+  border-radius: 0px;
+  /*background-color: blue;*/
 }
