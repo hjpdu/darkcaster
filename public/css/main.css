@@ -1,4 +1,5 @@
-body{
+body {
+  font-family: helvetica;
 
 }
 
@@ -10,9 +11,45 @@ hr {
   margin:5px;
 }
 
-#container button{
-  font-size: 20px;
-  border-style: none;
+
+div .form-group input {
+  margin: 5px;
+  border: medium solid black;
   border-radius: 0px;
-  /*background-color: blue;*/
+
+}
+.form-group p {
+  font-size: 15px;
+  border-color: black;
+  border-width: medium;
+}
+
+
+#container button {
+  font-size: 20px;
+  /*border-style: none;*/
+  border-color: black;
+  border-width: medium;
+  border-radius: 0px;
+  margin: 5px;
+  background-color: transparent;
+  color: black;
+}
+
+/*#container input {
+  margin: auto;
+}*/
+
+#ll-input{
+  position: fixed;
+  margin-right: 5px;
+  display:block;
+
+}
+
+#top-text{
+  border-color: black;
+  border-width: medium;
+  border-radius: 0px;
+  margin-left: 4px;
 }

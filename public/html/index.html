@@ -6,28 +6,27 @@
 </head>
 <body>
   <div class ="row">
-    <div class="col-md-6 col-md-offset-4">
-      <h1>DarkCaster Forecast</h1>
-    </div>
+
   </div>
   <div id="container">
     <div ng-controller='HomeController'>
-      <!--  above is current weather only-->
       <div class="row">
-        <div class="col-md-1 col-md-offset-1">
-          <h1>Currently</h1>
+        <span id='top-span'><div class="col-md-1 ">
+          <h1 id='top-text'>DarkCaster</h1>
         </div>
+        </span>
       </div>
       <div class = "row">
-        <div class="col-md-2 col-md-offset-1">
-          <div class="form-group">
+        <div class="col-md-1 col-md-offset-10">
+          <div class="form-group" id='ll-input'>
             <input type="text" id = "latitude" class = 'form-control' placeholder="latitude" ng-model='latitude'>
             <input type="text" id = "longitude" class = 'form-control' placeholder=  'longitude' ng-model='longitude'>
+            <p> Enter coordinates above and press the buttons on the left for various forecasts!</p>
           </div>
         </div>
       </div>
       <div class="row">
-        <div class="col-md-2 col-md-offset-1">
+        <div class="col-md-2 ">
           <button id="get-weather-button" class="btn btn-success" ng-click='getWeather(latitude, longitude)'>Currently</button>
         </div>
       </div>
@@ -41,10 +40,11 @@
           <p>{{weather.currently.time * 1000 | date:"medium"}}</p>
         </div>
         <div class="col-md-3">
-          <p>{{weather.currently.temperature | number:0 }}&deg;F </p>
+          <p>Temperature:{{weather.currently.temperature | number:0 }}&deg;F </p>
+          <p>Precipitation Chance:{{weather.currently.precipProbability * 100 | number:0}}%</p>
         </div>
         <div class="col-md-3 col-md-offset-6">
-          <p>{{weather.currently.precipProbability * 100 | number:0}}%</p>
+
         </div>
       </div>
       </div>
@@ -52,20 +52,20 @@
     <div ng-controller='DailyController'>
       <div class="row">
         <div class="col-md-1 col-md-offset-1">
-          <h1>Daily</h1>
+          <!-- <h1>Daily</h1> -->
         </div>
       </div>
       <div class="row">
         <div class="col-md-2 col-md-offset-1">
 
-          <div class="form-group">
+          <!-- <div class="form-group">
             <input type="text" id="latitude" class="form-control" placeholder="latitude" ng-model='latitude'>
             <input type="text" id="longitude" class="form-control" placeholder="longitude" ng-model='longitude'>
-          </div>
+          </div> -->
         </div>
       </div>
       <div class="row">
-        <div class="col-md-2 col-md-offset-1">
+        <div class="col-md-2">
           <button id="get-weather-daily-button" class="btn btn-success" ng-click='getWeather(latitude, longitude)'>Daily</button>
         </div>
       </div>
@@ -92,19 +92,19 @@
     <div ng-controller='MinutelyController'>
       <div class="row">
         <div class="col-md-1 col-md-offset-1">
-          <h1>Minutely</h1>
+          <!-- <h1>Minutely</h1> -->
         </div>
       </div>
       <div class="row">
         <div class="col-md-2 col-md-offset-1">
-          <div class="form-group">
+          <!-- <div class="form-group">
             <input type="text" id="latitude" class="form-control" placeholder= "latitude" ng-model='latitude'>
             <input type="text" id="longitude" class="form-control" placeholder= "longitude" ng-model='longitude'>
-          </div>
+          </div> -->
         </div>
       </div>
       <div class="row">
-        <div class="col-md-2 col-md-offset-1">
+        <div class="col-md-2 ">
           <button id="get-weather-minutely-button" class="btn btn-success" ng-click='getWeather(latitude,longitude)'>Minutely</button>
         </div>
       </div>
@@ -129,20 +129,20 @@
     <div ng-controller='HourlyController'>
       <div class="row">
         <div class="col-md-1 col-md-offset-1">
-          <h1>Hourly</h1>
+          <!-- <h1>Hourly</h1> -->
         </div>
       </div>
       <div class="row">
         <div class="col-md-2 col-md-offset-1">
-
+<!--
           <div class="form-group">
             <input type="text" id="latitude" class="form-control" placeholder="latitude" ng-model='latitude'>
             <input type="text" id="longitude" class="form-control" placeholder="longitude" ng-model='longitude'>
-          </div>
+          </div> -->
         </div>
       </div>
       <div class="row">
-        <div class="col-md-2 col-md-offset-1">
+        <div class="col-md-2 ">
           <button id="get-weather-hourly-button" class="btn btn-success" ng-click='getWeather(latitude, longitude)'>Hourly</button>
         </div>
       </div>
